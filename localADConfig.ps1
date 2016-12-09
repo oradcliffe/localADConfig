@@ -97,7 +97,7 @@
                 GroupScope = 'Global'
                 Description = "Global group for $RootOU"
                 Category = 'Security'
-                Members = ($Users | Where-Object {$_.Dept -eq $RootOU}).UserName
+                Members = ($Userdata | Where-Object {$_.Dept -eq $RootOU}).UserName
                 Path = "OU=Groups,OU=$RootOU,$DomainRoot"
                 Ensure = 'Present'
                 DependsOn = $DependsOn_User
